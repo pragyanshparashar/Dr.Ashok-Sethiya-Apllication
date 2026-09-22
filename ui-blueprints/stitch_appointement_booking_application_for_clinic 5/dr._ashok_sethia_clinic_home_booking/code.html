@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+
+<html class="h-full" lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/><link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base { html, body { width: 100%; min-height: 100%; margin: 0; padding: 0; } body { overscroll-behavior-y: none; } .pb-safe { padding-bottom: env(safe-area-inset-bottom, 0px); } .pt-safe { padding-top: env(safe-area-inset-top, 0px); } main > :first-child { margin-top: 0 !important; } main > :last-child { margin-bottom: 0 !important; } } ::-webkit-scrollbar { display: none; }</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { colors: { "on-tertiary-fixed": "#2a1700", "primary-fixed-dim": "#93ccff", "on-secondary-container": "#00714d", "on-tertiary-fixed-variant": "#653e00", "surface": "#faf8ff", "surface-tint": "#006398", "on-primary-container": "#fdfcff", "error-container": "#ffdad6", "on-primary-fixed": "#001d31", "primary-container": "#007bb9", "on-background": "#131b2e", "inverse-primary": "#93ccff", "on-secondary": "#ffffff", "surface-container-lowest": "#ffffff", "background": "#faf8ff", "primary-fixed": "#cce5ff", "secondary-fixed-dim": "#4edea3", "on-surface-variant": "#3f4850", "tertiary-container": "#a36700", "outline-variant": "#bfc7d2", "error": "#ba1a1a", "tertiary-fixed": "#ffddb8", "secondary": "#006c49", "secondary-container": "#6cf8bb", "tertiary": "#825100", "outline": "#707881", "on-error": "#ffffff", "on-error-container": "#93000a", "surface-variant": "#dae2fd", "surface-dim": "#d2d9f4", "on-tertiary": "#ffffff", "surface-container": "#eaedff", "on-tertiary-container": "#fffbff", "secondary-fixed": "#6ffbbe", "on-primary-fixed-variant": "#004b73", "inverse-surface": "#283044", "tertiary-fixed-dim": "#ffb95f", "on-secondary-fixed-variant": "#005236", "surface-container-high": "#e2e7ff", "primary": "#006194", "inverse-on-surface": "#eef0ff", "surface-bright": "#faf8ff", "on-surface": "#131b2e", "surface-container-low": "#f2f3ff", "on-secondary-fixed": "#002113", "surface-container-highest": "#dae2fd", "on-primary": "#ffffff" }, borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" }, spacing: { "margin": "2rem", "space-sm": "0.5rem", "space-xs": "0.25rem", "margin-mobile": "1rem", "space-xl": "2.5rem", "gutter": "1.5rem", "gutter-mobile": "1rem", "space-lg": "1.5rem", "space-md": "1rem" }, fontFamily: { "headline-lg": ["Plus Jakarta Sans"], "body-lg": ["Plus Jakarta Sans"], "headline-sm": ["Plus Jakarta Sans"], "headline-lg-mobile": ["Plus Jakarta Sans"], "body-md": ["Plus Jakarta Sans"], "label-lg": ["Plus Jakarta Sans"], "body-sm": ["Plus Jakarta Sans"], "title-lg": ["Plus Jakarta Sans"], "title-md": ["Plus Jakarta Sans"], "label-md": ["Plus Jakarta Sans"], "label-sm": ["Plus Jakarta Sans"], "display-lg": ["Plus Jakarta Sans"], "headline-md": ["Plus Jakarta Sans"] }, fontSize: { "headline-lg": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.015em", "fontWeight": "700" }], "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }], "headline-sm": ["20px", { "lineHeight": "28px", "fontWeight": "600" }], "headline-lg-mobile": ["26px", { "lineHeight": "34px", "letterSpacing": "-0.01em", "fontWeight": "700" }], "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }], "label-lg": ["14px", { "lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "600" }], "body-sm": ["14px", { "lineHeight": "20px", "fontWeight": "400" }], "title-lg": ["18px", { "lineHeight": "26px", "fontWeight": "600" }], "title-md": ["16px", { "lineHeight": "24px", "fontWeight": "600" }], "label-md": ["12px", { "lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "600" }], "label-sm": ["11px", { "lineHeight": "14px", "letterSpacing": "0.04em", "fontWeight": "700" }], "display-lg": ["40px", { "lineHeight": "52px", "letterSpacing": "-0.02em", "fontWeight": "700" }], "headline-md": ["24px", { "lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "600" }] } } } };</script></head><body class="bg-surface text-on-surface antialiased flex flex-col min-h-full"><header class="fixed top-0 w-full z-50 pt-safe bg-surface-container-lowest/90 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="h-20 px-4 flex items-center justify-between gap-2"><div class="flex items-center gap-2 min-w-0 flex-1"><img alt="Dr. Ashok Sethia Clinic Emblem" class="h-8 w-auto object-contain flex-shrink-0" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC6Gb6PpOXyb2SguMih5IgspYwxLAS-Kikazkld4Qlcd7ht9uH9ngSKr-Qzx09yadHE4BmWjGX1akVE3BdxrhDFiC7yAmUwMiMPVIzDbChwEX4qExJKOqY9VeQ6pn10ZWnPAEo_6bEhhYoq7ETLAYCb8_CZDgEcg4GmxevGKhX9016_D_FlqEq2-bJmw-Iee2BPgWnwa-bdMPGC0ivNlKXDhhdZUzXYmo6zgk0zJOTYn-CQ9h0V_iXMeQ"/><div class="flex flex-col min-w-0"><span class="font-title-md text-title-md text-primary truncate leading-tight">Dr. Ashok Sethia Clinic</span><span class="font-label-sm text-label-sm text-on-surface-variant truncate">Home Consult</span></div></div><div class="flex items-center gap-2 flex-shrink-0"><a class="inline-flex items-center gap-1 px-2.5 py-1.5 rounded-full bg-error-container text-on-error-container font-label-sm text-label-sm hover:opacity-95 transition-opacity" href="tel:07312538958"><span class="material-symbols-outlined text-[16px]">emergency</span><span class="hidden sm:inline font-semibold">Emergency:</span><span class="font-semibold">0731-2538958</span></a><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></header><main class="flex-1 flex flex-col w-full pt-20 pb-28 bg-surface"><div class="flex flex-col w-full">
+<!-- 1. Doctor Spotlight Banner -->
+<section class="px-4 py-4 sm:py-6 flex flex-col gap-4">
+<!-- Top Warm Greeting & Location Tag -->
+<div class="flex items-center justify-between">
+<div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-surface-container-high text-primary font-label-md text-label-md shadow-sm">
+<span class="material-symbols-outlined text-[15px] text-primary" style="font-variation-settings: 'FILL' 1;">location_on</span>
+<span>Regal Circle, M.G. Road, Indore</span>
+</div>
+<div class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-secondary-container/30 text-on-secondary-container font-label-sm text-label-sm font-semibold">
+<span class="w-2 h-2 rounded-full bg-secondary animate-pulse"></span>
+<span>OPD Active</span>
+</div>
+</div>
+<!-- Doctor Profile Card with Organic Framing -->
+<div class="rounded-2xl bg-surface-container-lowest p-4 sm:p-6 shadow-[0_4px_20px_rgba(19,27,46,0.06)] flex flex-col gap-4">
+<div class="flex items-start gap-3.5">
+<!-- Photo with Trust Halo Ring -->
+<div class="relative flex-shrink-0">
+<div class="w-20 h-20 sm:w-24 sm:h-24 rounded-2xl overflow-hidden shadow-md ring-2 ring-primary/20 bg-surface-container-high">
+<img alt="Dr. Ashok Sethia" class="w-full h-full object-cover object-top" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBuxgoMaBs0fotYD0tF9rw0HiNSTYNU_yVMCvK7-axoG22sZ5duFOkpjTj6bldBLyW7nOOkXjqjxl6qdYvOWFNWRCxIWWS6nr_fB2ePo02m4kzoGAKOiPaJ0NQvmlQWAmDyK3QbptOax54XcwaXiIo5BWIh_fsBYcKbV8QCle6KcVyQwCA1b9HSYv9OdTK0d-uuGugXkkUTOsQ5VfFao7qNEHTGcJ955qHlgxaEsQlbbGOOolhqoqAlXA"/>
+</div>
+<div class="absolute -bottom-1 -right-1 w-7 h-7 rounded-full bg-primary flex items-center justify-center text-on-primary shadow-sm" title="Verified Specialist">
+<span class="material-symbols-outlined text-[16px]">verified</span>
+</div>
+</div>
+<!-- Name & Core Qualifications -->
+<div class="flex flex-col min-w-0 flex-1">
+<span class="font-headline-lg-mobile text-headline-lg-mobile text-on-surface leading-tight">Dr. Ashok Sethia</span>
+<span class="font-label-md text-label-md text-primary mt-0.5 font-semibold">MD, DNB, MNAMS (Cardiology &amp; Medicine)</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1 leading-snug">Senior Consultant Physician &amp; Cardiologist</p>
+</div>
+</div>
+<!-- Core Headline -->
+<div class="bg-surface-container-low/70 rounded-xl p-3">
+<p class="font-title-md text-title-md text-on-surface text-center italic">
+          “Compassionate Internal Medicine &amp; Advanced Non-Invasive Cardiology in Indore”
+        </p>
+</div>
+<!-- Trust Badges Carousel/Wrap -->
+<div class="flex flex-wrap gap-2 pt-1">
+<div class="inline-flex items-center gap-1.5 px-2.5 py-1.5 rounded-full bg-primary-fixed text-on-primary-fixed font-label-sm text-label-sm font-semibold shadow-xs">
+<span class="material-symbols-outlined text-[16px] text-primary">workspace_premium</span>
+<span>40+ Years Clinical Excellence</span>
+</div>
+<div class="inline-flex items-center gap-1.5 px-2.5 py-1.5 rounded-full bg-surface-container-high text-on-surface-variant font-label-sm text-label-sm font-semibold shadow-xs">
+<span class="material-symbols-outlined text-[16px] text-secondary">badge</span>
+<span>MP Medical Council Reg #6421</span>
+</div>
+<div class="inline-flex items-center gap-1.5 px-2.5 py-1.5 rounded-full bg-surface-container-high text-on-surface-variant font-label-sm text-label-sm font-semibold shadow-xs">
+<span class="material-symbols-outlined text-[16px] text-primary">cardiology</span>
+<span>Associate, American College of Cardiology (ACC)</span>
+</div>
+</div>
+</div>
+</section>
+<!-- 2. Integrated Quick-Booking Widget -->
+<section class="px-4 py-2 flex flex-col gap-3">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<div class="w-8 h-8 rounded-xl bg-primary/10 text-primary flex items-center justify-center">
+<span class="material-symbols-outlined text-[20px]">calendar_add_on</span>
+</div>
+<div>
+<h2 class="font-title-lg text-title-lg text-on-surface">Book OPD Consultation</h2>
+<p class="font-label-sm text-label-sm text-on-surface-variant">Confirmed digital token with priority slot</p>
+</div>
+</div>
+<span class="inline-flex items-center px-2 py-0.5 rounded-full bg-secondary-container text-on-secondary-container font-label-sm text-label-sm font-semibold">Instant SMS</span>
+</div>
+<!-- Interactive Step-By-Step Booking Container -->
+<div class="bg-surface-container-lowest rounded-2xl p-4 sm:p-5 shadow-[0_4px_24px_rgba(19,27,46,0.06)] flex flex-col gap-5">
+<!-- Step 1: Session Selector -->
+<div class="flex flex-col gap-2">
+<label class="flex items-center justify-between font-label-sm text-label-sm uppercase tracking-wider text-on-surface-variant">
+<span>Step 1 • Consultation Shift</span>
+<span class="text-primary font-semibold">Today Open</span>
+</label>
+<div class="grid grid-cols-2 gap-2" id="shift-selector">
+<button class="shift-btn flex flex-col items-center justify-center py-2.5 px-3 rounded-xl bg-surface-container-low text-on-surface transition-all text-center group active:scale-98" data-shift="morning" type="button">
+<span class="font-label-md text-label-md text-on-surface-variant group-hover:text-primary">Morning OPD</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant font-normal">10:00 AM – 1:00 PM</span>
+</button>
+<button class="shift-btn flex flex-col items-center justify-center py-2.5 px-3 rounded-xl bg-primary text-on-primary shadow-sm ring-2 ring-primary/30 transition-all text-center group active:scale-98" data-shift="evening" type="button">
+<span class="font-label-md text-label-md font-semibold text-on-primary">Evening OPD</span>
+<span class="font-label-sm text-label-sm opacity-90 font-normal">5:00 PM – 8:00 PM</span>
+</button>
+</div>
+</div>
+<!-- Step 2: Interactive Date Picker pills & Time Slots -->
+<div class="flex flex-col gap-3">
+<label class="font-label-sm text-label-sm uppercase tracking-wider text-on-surface-variant">
+          Step 2 • Select Date &amp; Available Slot
+        </label>
+<!-- Date Pills -->
+<div class="flex items-center gap-2 overflow-x-auto pb-1 -mx-1 px-1 scrollbar-none" id="date-selector">
+<button class="date-btn flex-shrink-0 flex flex-col items-center justify-center min-w-[76px] py-2 px-3 rounded-xl bg-primary text-on-primary shadow-sm font-label-md text-label-md" type="button">
+<span class="font-label-sm text-label-sm opacity-90">Today</span>
+<span class="font-semibold text-title-md">24 Oct</span>
+</button>
+<button class="date-btn flex-shrink-0 flex flex-col items-center justify-center min-w-[76px] py-2 px-3 rounded-xl bg-surface-container-low text-on-surface font-label-md text-label-md hover:bg-surface-container transition-colors" type="button">
+<span class="font-label-sm text-label-sm text-on-surface-variant">Tomorrow</span>
+<span class="font-semibold text-title-md">25 Oct</span>
+</button>
+<button class="date-btn flex-shrink-0 flex flex-col items-center justify-center min-w-[76px] py-2 px-3 rounded-xl bg-surface-container-low text-on-surface font-label-md text-label-md hover:bg-surface-container transition-colors" type="button">
+<span class="font-label-sm text-label-sm text-on-surface-variant">Fri</span>
+<span class="font-semibold text-title-md">26 Oct</span>
+</button>
+<button class="date-btn flex-shrink-0 flex flex-col items-center justify-center min-w-[76px] py-2 px-3 rounded-xl bg-surface-container-low text-on-surface font-label-md text-label-md hover:bg-surface-container transition-colors" type="button">
+<span class="font-label-sm text-label-sm text-on-surface-variant">Sat</span>
+<span class="font-semibold text-title-md">27 Oct</span>
+</button>
+</div>
+<!-- Time Slots Grid -->
+<div class="grid grid-cols-3 gap-2 pt-1" id="slot-grid">
+<button class="slot-pill py-2.5 px-2 rounded-xl bg-surface-container-low text-on-surface text-center font-label-md text-label-md hover:bg-surface-container transition-all" type="button">
+            5:15 PM
+          </button>
+<button class="slot-pill py-2.5 px-2 rounded-xl bg-primary text-on-primary text-center font-label-md text-label-md font-semibold shadow-sm ring-2 ring-primary/30 flex items-center justify-center gap-1" type="button">
+<span class="material-symbols-outlined text-[15px]">check_circle</span>
+<span>5:30 PM</span>
+</button>
+<button class="slot-pill py-2.5 px-2 rounded-xl bg-surface-container-low text-on-surface text-center font-label-md text-label-md hover:bg-surface-container transition-all" type="button">
+            5:45 PM
+          </button>
+<button class="slot-pill py-2.5 px-2 rounded-xl bg-surface-container-low text-on-surface text-center font-label-md text-label-md hover:bg-surface-container transition-all" type="button">
+            6:00 PM
+          </button>
+<button class="slot-pill py-2.5 px-2 rounded-xl bg-surface-container-low text-on-surface text-center font-label-md text-label-md hover:bg-surface-container transition-all" type="button">
+            6:30 PM
+          </button>
+<button class="slot-pill py-2.5 px-2 rounded-xl bg-surface-container-low text-on-surface text-center font-label-md text-label-md hover:bg-surface-container transition-all" type="button">
+            7:00 PM
+          </button>
+</div>
+</div>
+<!-- Step 3: Patient Phone Number & OTP Verification -->
+<div class="flex flex-col gap-2 pt-1">
+<label class="font-label-sm text-label-sm uppercase tracking-wider text-on-surface-variant" for="patient-phone">
+          Step 3 • Patient Mobile Number (For Digital Token)
+        </label>
+<div class="flex items-center gap-2">
+<div class="flex items-center gap-1.5 px-3 py-3 rounded-xl bg-surface-container text-on-surface font-title-md text-title-md select-none">
+<span class="font-semibold">+91</span>
+</div>
+<div class="relative flex-1">
+<input class="w-full h-12 px-3.5 rounded-xl bg-surface-container-low text-on-surface font-title-md text-title-md placeholder:text-outline placeholder:font-normal focus:outline-none focus:bg-surface-container-lowest focus:ring-2 focus:ring-primary transition-all" id="patient-phone" maxlength="10" placeholder="Enter 10-digit mobile" type="tel"/>
+</div>
+<button class="h-12 px-4 rounded-xl bg-surface-container-high text-primary font-label-md text-label-md hover:bg-primary-fixed transition-colors whitespace-nowrap active:scale-98" id="btn-send-otp" type="button">
+            Send OTP
+          </button>
+</div>
+</div>
+<!-- Fee Summary & Confirmation CTA -->
+<div class="mt-1 pt-3 bg-surface-container-low rounded-xl p-3 flex flex-col gap-2.5">
+<div class="flex items-center justify-between font-label-md text-label-md">
+<div class="flex items-center gap-1.5 text-on-surface-variant">
+<span class="material-symbols-outlined text-[18px] text-secondary">payments</span>
+<span>Consultation Fee</span>
+</div>
+<div class="font-semibold text-title-md text-on-surface">
+            ₹500 <span class="font-label-sm text-label-sm text-on-surface-variant font-normal">(Payable via UPI / Cards)</span>
+</div>
+</div>
+<button class="w-full h-13 py-3.5 px-4 rounded-xl bg-primary text-on-primary font-title-md text-title-md flex items-center justify-center gap-2 shadow-md hover:bg-primary-container transition-all active:scale-[0.99]" id="btn-pay-consult" type="button">
+<span class="material-symbols-outlined text-[20px]">lock</span>
+<span>Proceed to Pay ₹500</span>
+</button>
+<div class="flex items-center justify-center gap-3 text-on-surface-variant font-label-sm text-label-sm">
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-[14px] text-secondary">check_circle</span> Instant OPD Token</span>
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-[14px] text-secondary">check_circle</span> No Clinic Waiting Queue</span>
+</div>
+</div>
+</div>
+</section>
+<!-- 3. Clinical Focus & In-Clinic Diagnostics -->
+<section class="px-4 py-6 flex flex-col gap-3">
+<div class="flex items-center justify-between">
+<div>
+<h2 class="font-headline-sm text-headline-sm text-on-surface">Clinical Focus &amp; Diagnostics</h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Advanced non-invasive cardiac laboratory equipped for accurate on-site diagnosis</p>
+</div>
+</div>
+<!-- 2x2 Clean Bento Grid -->
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+<!-- Feature 1: 2D Echocardiography -->
+<div class="bg-surface-container-lowest rounded-2xl p-4 shadow-[0_2px_12px_rgba(19,27,46,0.04)] flex items-start gap-3.5 hover:shadow-md transition-shadow">
+<div class="w-11 h-11 rounded-xl bg-primary/10 text-primary flex items-center justify-center flex-shrink-0">
+<span class="material-symbols-outlined text-[24px]">vital_signs</span>
+</div>
+<div class="flex flex-col min-w-0">
+<h3 class="font-title-md text-title-md text-on-surface">2D Echocardiography</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5 leading-snug">
+            High-resolution cardiac structural evaluation &amp; Doppler study for chamber, valve, and ejection fraction assessment.
+          </p>
+</div>
+</div>
+<!-- Feature 2: Treadmill Stress Testing (TMT) -->
+<div class="bg-surface-container-lowest rounded-2xl p-4 shadow-[0_2px_12px_rgba(19,27,46,0.04)] flex items-start gap-3.5 hover:shadow-md transition-shadow">
+<div class="w-11 h-11 rounded-xl bg-primary/10 text-primary flex items-center justify-center flex-shrink-0">
+<span class="material-symbols-outlined text-[24px]">directions_run</span>
+</div>
+<div class="flex flex-col min-w-0">
+<h3 class="font-title-md text-title-md text-on-surface">Treadmill Stress Testing (TMT)</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5 leading-snug">
+            Exercise tolerance protocols for early ischemic heart disease and coronary artery disease detection.
+          </p>
+</div>
+</div>
+<!-- Feature 3: Ambulatory BP Monitoring (ABPM) -->
+<div class="bg-surface-container-lowest rounded-2xl p-4 shadow-[0_2px_12px_rgba(19,27,46,0.04)] flex items-start gap-3.5 hover:shadow-md transition-shadow">
+<div class="w-11 h-11 rounded-xl bg-primary/10 text-primary flex items-center justify-center flex-shrink-0">
+<span class="material-symbols-outlined text-[24px]">monitor_heart</span>
+</div>
+<div class="flex flex-col min-w-0">
+<h3 class="font-title-md text-title-md text-on-surface">Ambulatory BP Monitoring (ABPM)</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5 leading-snug">
+            24-hour continuous computerized blood pressure tracking to identify nocturnal dip abnormalities &amp; white-coat spikes.
+          </p>
+</div>
+</div>
+<!-- Feature 4: Preventive Internal Medicine -->
+<div class="bg-surface-container-lowest rounded-2xl p-4 shadow-[0_2px_12px_rgba(19,27,46,0.04)] flex items-start gap-3.5 hover:shadow-md transition-shadow">
+<div class="w-11 h-11 rounded-xl bg-secondary/10 text-secondary flex items-center justify-center flex-shrink-0">
+<span class="material-symbols-outlined text-[24px]">health_and_safety</span>
+</div>
+<div class="flex flex-col min-w-0">
+<h3 class="font-title-md text-title-md text-on-surface">Preventive Internal Medicine</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5 leading-snug">
+            Comprehensive management of complicated diabetes, metabolic syndrome, dyslipidemia &amp; adult multisystem health.
+          </p>
+</div>
+</div>
+</div>
+</section>
+<!-- 4. Institutional Affiliations Strip -->
+<section class="px-4 py-4 flex flex-col gap-3">
+<div>
+<h2 class="font-headline-sm text-headline-sm text-on-surface">Hospital Affiliations &amp; Clinical Leadership</h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Serving premier healthcare institutions across Central India</p>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
+<!-- Vishesh Jupiter Hospital -->
+<div class="bg-surface-container-lowest rounded-2xl p-4 shadow-[0_2px_10px_rgba(19,27,46,0.04)] flex flex-col justify-between gap-3">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-xl bg-primary-fixed flex items-center justify-center text-on-primary-fixed">
+<span class="material-symbols-outlined text-[20px]">domain</span>
+</div>
+<div class="flex flex-col min-w-0">
+<h4 class="font-title-md text-title-md text-on-surface truncate">Vishesh Jupiter Hospital</h4>
+<span class="font-label-sm text-label-sm text-primary font-semibold">Ring Road, Indore</span>
+</div>
+</div>
+<div class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-surface-container font-label-sm text-label-sm text-on-surface-variant">
+<span class="material-symbols-outlined text-[14px] text-secondary">clinical_notes</span>
+<span>Senior Consultant – Physician</span>
+</div>
+</div>
+<!-- Gita Bhawan Hospital -->
+<div class="bg-surface-container-lowest rounded-2xl p-4 shadow-[0_2px_10px_rgba(19,27,46,0.04)] flex flex-col justify-between gap-3">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-xl bg-primary-fixed flex items-center justify-center text-on-primary-fixed">
+<span class="material-symbols-outlined text-[20px]">local_hospital</span>
+</div>
+<div class="flex flex-col min-w-0">
+<h4 class="font-title-md text-title-md text-on-surface truncate">Gita Bhawan Hospital</h4>
+<span class="font-label-sm text-label-sm text-primary font-semibold">Manorama Ganj, Indore</span>
+</div>
+</div>
+<div class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-surface-container font-label-sm text-label-sm text-on-surface-variant">
+<span class="material-symbols-outlined text-[14px] text-secondary">emergency</span>
+<span>Consultant Physician &amp; Ex-ICU In-charge</span>
+</div>
+</div>
+<!-- DNS Hospital -->
+<div class="bg-surface-container-lowest rounded-2xl p-4 shadow-[0_2px_10px_rgba(19,27,46,0.04)] flex flex-col justify-between gap-3">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-xl bg-primary-fixed flex items-center justify-center text-on-primary-fixed">
+<span class="material-symbols-outlined text-[20px]">corporate_fare</span>
+</div>
+<div class="flex flex-col min-w-0">
+<h4 class="font-title-md text-title-md text-on-surface truncate">DNS Hospital</h4>
+<span class="font-label-sm text-label-sm text-primary font-semibold">A.B. Road, Indore</span>
+</div>
+</div>
+<div class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-surface-container font-label-sm text-label-sm text-on-surface-variant">
+<span class="material-symbols-outlined text-[14px] text-secondary">ecg_heart</span>
+<span>Visiting Senior Clinical Advisor</span>
+</div>
+</div>
+</div>
+</section>
+<!-- 5. Academic Credentials & Research Accordion -->
+<section class="px-4 py-4 flex flex-col gap-3">
+<div class="flex items-center justify-between">
+<div>
+<h2 class="font-headline-sm text-headline-sm text-on-surface">Academic Pedigree &amp; Research</h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Peer-reviewed publications, global fellowships, and scientific honors</p>
+</div>
+</div>
+<div class="flex flex-col gap-2.5">
+<!-- Accordion Item 1 (Expanded State) -->
+<div class="accordion-item bg-surface-container-lowest rounded-2xl p-4 shadow-[0_2px_12px_rgba(19,27,46,0.04)] flex flex-col gap-3 transition-all">
+<button class="accordion-toggle flex items-center justify-between w-full text-left cursor-pointer" data-target="thesis-body" type="button">
+<div class="flex items-center gap-2.5 min-w-0">
+<div class="w-8 h-8 rounded-xl bg-tertiary-fixed text-on-tertiary-fixed flex items-center justify-center flex-shrink-0">
+<span class="material-symbols-outlined text-[18px]">menu_book</span>
+</div>
+<span class="font-title-md text-title-md text-on-surface truncate">Landmark Clinical Research: Tribal Cardiology</span>
+</div>
+<span class="accordion-icon material-symbols-outlined text-primary text-[20px] transition-transform rotate-180">expand_more</span>
+</button>
+<div class="flex flex-col gap-2 pt-2 bg-surface-container-low rounded-xl p-3.5" id="thesis-body">
+<div class="inline-flex items-center gap-1 text-primary font-label-sm text-label-sm font-semibold">
+<span class="material-symbols-outlined text-[14px]">auto_stories</span>
+<span>Journal of the Association of Physicians of India (JAPI 1996)</span>
+</div>
+<h4 class="font-title-md text-title-md text-on-surface font-bold">
+            “Cardiovascular Diseases in Tribals of Jhabua”
+          </h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
+            Groundbreaking primary epidemiological study documenting coronary patterns, hypertensive prevalences, and endemic nutritional cardiomyopathy among indigenous populations in Western Madhya Pradesh.
+          </p>
+</div>
+</div>
+<!-- Accordion Item 2: Fellowships & Life Memberships -->
+<div class="accordion-item bg-surface-container-lowest rounded-2xl p-4 shadow-[0_2px_12px_rgba(19,27,46,0.04)] flex flex-col gap-3 transition-all">
+<button class="accordion-toggle flex items-center justify-between w-full text-left cursor-pointer" data-target="fellowship-body" type="button">
+<div class="flex items-center gap-2.5 min-w-0">
+<div class="w-8 h-8 rounded-xl bg-primary-fixed text-on-primary-fixed flex items-center justify-center flex-shrink-0">
+<span class="material-symbols-outlined text-[18px]">military_tech</span>
+</div>
+<span class="font-title-md text-title-md text-on-surface truncate">Fellowships &amp; Professional Life Memberships</span>
+</div>
+<span class="accordion-icon material-symbols-outlined text-primary text-[20px] transition-transform">expand_more</span>
+</button></div>
+<div class="hidden flex flex-col gap-2 pt-2 bg-surface-container-low rounded-xl p-3.5" id="fellowship-body">
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-2">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[16px] text-secondary">check_circle</span>
+<span class="font-body-sm text-body-sm text-on-surface">Cardiological Society of India (CSI)</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[16px] text-secondary">check_circle</span>
+<span class="font-body-sm text-body-sm text-on-surface">Association of Physicians of India (API)</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[16px] text-secondary">check_circle</span>
+<span class="font-body-sm text-body-sm text-on-surface">American College of Cardiology (Associate, ACC)</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[16px] text-secondary">check_circle</span>
+<span class="font-body-sm text-body-sm text-on-surface">Indian Academy of Echocardiography (IAE)</span>
+</div>
+</div>
+</div>
+</div>
+</section></div>
+<!-- 6. Clinic Footer & Contact Info -->
+<footer class="mt-4 px-4 py-6 bg-surface-container-high text-on-surface flex flex-col gap-5 rounded-t-3xl">
+<div class="flex flex-col sm:flex-row items-start justify-between gap-4">
+<!-- Address Block -->
+<div class="flex flex-col gap-1 max-w-sm">
+<span class="font-title-md text-title-md text-primary font-bold">Dr. Ashok Sethia Heart &amp; Medical Clinic</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-snug">
+          212 City Plaza, 564 M.G. Road, Near Regal Cinema,<br/>Indore, Madhya Pradesh – 452001
+        </p>
+<div class="flex items-center gap-2 mt-2">
+<a class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-surface-container-lowest text-primary font-label-md text-label-md font-semibold shadow-xs hover:bg-surface transition-colors" href="tel:07312538958">
+<span class="material-symbols-outlined text-[16px]">call</span>
+<span>0731-2538958</span>
+</a>
+</div>
+</div>
+<!-- Timings Block -->
+<div class="flex flex-col gap-1">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-on-surface-variant font-semibold">OPD Consultation Schedule</span>
+<div class="flex flex-col gap-0.5 text-on-surface font-body-sm text-body-sm">
+<span class="font-semibold">Monday – Saturday</span>
+<span>Morning: 10:00 AM – 1:00 PM</span>
+<span>Evening: 5:00 PM – 8:00 PM</span>
+<span class="font-label-sm text-label-sm text-error font-medium mt-0.5">Sunday: Emergency Referrals Only</span>
+</div>
+</div>
+</div>
+<!-- Regulatory Links -->
+<div class="pt-4 border-t-0 flex flex-wrap items-center justify-between gap-2 text-on-surface-variant font-label-sm text-label-sm">
+<div class="flex items-center gap-3">
+<a class="hover:text-primary transition-colors" href="#">Terms of Service</a>
+<span>•</span>
+<a class="hover:text-primary transition-colors" href="#">Privacy Policy</a>
+<span>•</span>
+<a class="hover:text-primary transition-colors" href="#">Refund Policy</a>
+<span>•</span>
+<a class="hover:text-primary transition-colors" href="#">Regulatory Compliance</a>
+</div>
+<p class="text-outline">
+        © 2025 Dr. Ashok Sethia Clinic. All rights reserved.
+      </p>
+</div>
+</footer>
+<script>
+  (function() {
+    // 1. Shift Selector micro-interaction
+    const shiftBtns = document.querySelectorAll('.shift-btn');
+    shiftBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        shiftBtns.forEach(b => {
+          b.className = 'shift-btn flex flex-col items-center justify-center py-2.5 px-3 rounded-xl bg-surface-container-low text-on-surface transition-all text-center group active:scale-98';
+          b.querySelector('span:first-child').className = 'font-label-md text-label-md text-on-surface-variant group-hover:text-primary';
+          b.querySelector('span:last-child').className = 'font-label-sm text-label-sm text-on-surface-variant font-normal';
+        });
+        btn.className = 'shift-btn flex flex-col items-center justify-center py-2.5 px-3 rounded-xl bg-primary text-on-primary shadow-sm ring-2 ring-primary/30 transition-all text-center group active:scale-98';
+        btn.querySelector('span:first-child').className = 'font-label-md text-label-md font-semibold text-on-primary';
+        btn.querySelector('span:last-child').className = 'font-label-sm text-label-sm opacity-90 font-normal';
+      });
+    });
+
+    // 2. Date Selector micro-interaction
+    const dateBtns = document.querySelectorAll('.date-btn');
+    dateBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        dateBtns.forEach(b => {
+          b.className = 'date-btn flex-shrink-0 flex flex-col items-center justify-center min-w-[76px] py-2 px-3 rounded-xl bg-surface-container-low text-on-surface font-label-md text-label-md hover:bg-surface-container transition-colors';
+          b.querySelector('span:first-child').className = 'font-label-sm text-label-sm text-on-surface-variant';
+        });
+        btn.className = 'date-btn flex-shrink-0 flex flex-col items-center justify-center min-w-[76px] py-2 px-3 rounded-xl bg-primary text-on-primary shadow-sm font-label-md text-label-md';
+        btn.querySelector('span:first-child').className = 'font-label-sm text-label-sm opacity-90';
+      });
+    });
+
+    // 3. Slot Selector micro-interaction
+    const slotBtns = document.querySelectorAll('.slot-pill');
+    slotBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        slotBtns.forEach(b => {
+          b.className = 'slot-pill py-2.5 px-2 rounded-xl bg-surface-container-low text-on-surface text-center font-label-md text-label-md hover:bg-surface-container transition-all';
+          b.innerHTML = b.textContent.replace('check_circle', '').trim();
+        });
+        btn.className = 'slot-pill py-2.5 px-2 rounded-xl bg-primary text-on-primary text-center font-label-md text-label-md font-semibold shadow-sm ring-2 ring-primary/30 flex items-center justify-center gap-1';
+        const txt = btn.textContent.trim();
+        btn.innerHTML = '<span class="material-symbols-outlined text-[15px]">check_circle</span><span>' + txt + '</span>';
+      });
+    });
+
+    // 4. Send OTP trigger feedback
+    const otpBtn = document.getElementById('btn-send-otp');
+    const phoneInput = document.getElementById('patient-phone');
+    if (otpBtn && phoneInput) {
+      otpBtn.addEventListener('click', () => {
+        const val = phoneInput.value.trim();
+        if (val.length < 10) {
+          phoneInput.focus();
+          phoneInput.classList.add('ring-2', 'ring-error');
+          setTimeout(() => phoneInput.classList.remove('ring-2', 'ring-error'), 1800);
+          return;
+        }
+        otpBtn.innerText = 'Sent ✓';
+        otpBtn.classList.replace('bg-surface-container-high', 'bg-secondary-container');
+        otpBtn.classList.replace('text-primary', 'text-on-secondary-container');
+        setTimeout(() => {
+          otpBtn.innerText = 'Resend';
+          otpBtn.classList.replace('bg-secondary-container', 'bg-surface-container-high');
+          otpBtn.classList.replace('text-on-secondary-container', 'text-primary');
+        }, 30000);
+      });
+    }
+
+    // 5. Accordion Behavior
+    const toggles = document.querySelectorAll('.accordion-toggle');
+    toggles.forEach(toggle => {
+      toggle.addEventListener('click', () => {
+        const targetId = toggle.getAttribute('data-target');
+        const target = document.getElementById(targetId);
+        const icon = toggle.querySelector('.accordion-icon');
+        if (target) {
+          const isHidden = target.classList.contains('hidden');
+          if (isHidden) {
+            target.classList.remove('hidden');
+            icon.classList.add('rotate-180');
+          } else {
+            target.classList.add('hidden');
+            icon.classList.remove('rotate-180');
+          }
+        }
+      });
+    });
+
+    // 6. Proceed to Pay interaction
+    const payBtn = document.getElementById('btn-pay-consult');
+    if (payBtn) {
+      payBtn.addEventListener('click', () => {
+        payBtn.innerHTML = '<span class="material-symbols-outlined animate-spin text-[20px]">progress_activity</span><span>Securing Consultation Slot...</span>';
+        setTimeout(() => {
+          payBtn.innerHTML = '<span class="material-symbols-outlined text-[20px]">check</span><span>Token Reserved (#14)</span>';
+          payBtn.classList.replace('bg-primary', 'bg-secondary');
+        }, 1200);
+      });
+    }
+  })();
+</script></main><nav class="fixed bottom-0 w-full z-50 pb-safe bg-surface-container-lowest/95 backdrop-blur-xl shadow-[0_-2px_12px_rgba(19,27,46,0.05)]" data-active-classes="text-primary font-semibold"><div class="flex justify-around items-center h-16 px-1"><a aria-current="page" class="flex flex-col items-center justify-center w-full h-full min-h-[44px] gap-0.5 transition-colors text-primary font-semibold" data-path="home-consult" href="#"><span class="material-symbols-outlined text-[22px]">local_hospital</span><span class="font-label-sm text-label-sm tracking-tight text-center truncate max-w-[76px]">Consult</span></a><a class="flex flex-col items-center justify-center w-full h-full min-h-[44px] gap-0.5 text-on-surface-variant hover:text-primary transition-colors" data-path="diagnostic-services" href="#"><span class="material-symbols-outlined text-[22px]">ecg_heart</span><span class="font-label-sm text-label-sm tracking-tight text-center truncate max-w-[76px]">Diagnostics</span></a><a class="flex flex-col items-center justify-center w-full h-full min-h-[44px] gap-0.5 text-on-surface-variant hover:text-primary transition-colors" data-path="affiliations-accreditations" href="#"><span class="material-symbols-outlined text-[22px]">verified</span><span class="font-label-sm text-label-sm tracking-tight text-center truncate max-w-[76px]">Affiliations</span></a><a class="flex flex-col items-center justify-center w-full h-full min-h-[44px] gap-0.5 text-on-surface-variant hover:text-primary transition-colors" data-path="my-appointments" href="#"><span class="material-symbols-outlined text-[22px]">confirmation_number</span><span class="font-label-sm text-label-sm tracking-tight text-center truncate max-w-[76px]">Token &amp; Visits</span></a></div></nav></body></html>
