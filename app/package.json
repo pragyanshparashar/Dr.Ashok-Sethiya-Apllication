@@ -8,7 +8,8 @@
     "start": "next start",
     "lint": "eslint",
     "db:check": "node scripts/check-db.mjs",
-    "verify:slots": "node scripts/verify-slots.mjs"
+    "verify:slots": "node scripts/verify-slots.mjs",
+    "seed:slots": "node scripts/seed-slots.mjs"
   },
   "dependencies": {
     "dayjs": "^1.11.23",

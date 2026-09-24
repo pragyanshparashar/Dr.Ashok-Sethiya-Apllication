@@ -30,8 +30,21 @@ export const SLOT_DURATION_MINUTES = 12;
  * capacity — there is no separate cap. 180 minutes ÷ 12 = 15 appointments.
  */
 export const SESSIONS = {
-  MORNING: { label: "Morning OPD", startTime: "10:00", endTime: "13:00" },
-  EVENING: { label: "Evening OPD", startTime: "17:00", endTime: "20:00" },
+  MORNING: {
+    /** Heading form, e.g. on a button. */
+    label: "Morning OPD",
+    /** Mid-sentence form. "OPD" is an acronym and must not be lower-cased,
+     *  so sentences use this rather than calling .toLowerCase() on the label. */
+    sentenceName: "morning session",
+    startTime: "10:00",
+    endTime: "13:00",
+  },
+  EVENING: {
+    label: "Evening OPD",
+    sentenceName: "evening session",
+    startTime: "17:00",
+    endTime: "20:00",
+  },
 } as const;
 
 export type SessionName = keyof typeof SESSIONS;
