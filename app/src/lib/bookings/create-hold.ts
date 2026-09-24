@@ -16,7 +16,13 @@ export type CreateHoldInput = {
 };
 
 export type CreateHoldResult =
-  | { ok: true; bookingId: mongoose.Types.ObjectId; lockExpiresAt: Date; amountPaise: number }
+  | {
+      ok: true;
+      bookingId: mongoose.Types.ObjectId;
+      slotId: mongoose.Types.ObjectId;
+      lockExpiresAt: Date;
+      amountPaise: number;
+    }
   | { ok: false; reason: "SLOT_UNAVAILABLE" | "PHONE_NOT_VERIFIED" };
 
 /**
@@ -72,6 +78,7 @@ export async function createBookingHold(
   return {
     ok: true,
     bookingId: booking._id,
+    slotId: claim.slotId,
     lockExpiresAt: claim.lockExpiresAt,
     amountPaise: CONSULTATION_FEE_PAISE,
   };
