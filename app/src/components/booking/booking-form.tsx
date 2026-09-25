@@ -125,13 +125,10 @@ export function BookingForm({
       description: "OPD consultation",
       order_id: hold.orderId,
       prefill: { name, contact: phone },
-      // UPI first: it is the overwhelming majority of payments here.
-      config: {
-        display: {
-          sequence: ["block.upi", "block.card", "block.netbanking"],
-          preferences: { show_default_blocks: true },
-        },
-      },
+      // No display config: referencing blocks without defining them produced
+      // an invalid shape that Razorpay silently ignored. Its default ordering
+      // already surfaces UPI first in India, once UPI is enabled on the
+      // account (Dashboard > Settings > Configuration > Payment Methods).
       theme: { color: "#006194" },
       handler: () => {
         // The browser's word is never trusted as proof of payment — the status

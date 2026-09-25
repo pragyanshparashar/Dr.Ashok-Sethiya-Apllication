@@ -6,6 +6,8 @@ import { PaymentModel } from "@/models/payment";
 import { PatientModel } from "@/models/patient";
 import { getRazorpayClient } from "@/lib/payments/razorpay";
 import { confirmBooking } from "@/lib/bookings/confirm";
+import { SlotModel } from "@/models/slot";
+import { releaseExpiredHolds } from "@/lib/slots/claim";
 
 /**
  * What the status page polls.
@@ -28,6 +30,12 @@ export async function GET(
   }
 
   await connectToDatabase();
+
+  // Reclaim any hold that has lapsed. Running this here as well as on a
+  // schedule means an abandoned slot returns to sale the moment anyone looks,
+  // rather than sitting unavailable until the next sweep.
+  await releaseExpiredHolds();
+
   const booking = await BookingModel.findById(id);
   if (!booking) return NextResponse.json({ error: "Not found" }, { status: 404 });
 
@@ -73,6 +81,7 @@ async function tryVerifyWithGateway(bookingId: mongoose.Types.ObjectId): Promise
 async function shape(booking: InstanceType<typeof BookingModel>) {
   const patient = await PatientModel.findById(booking.patientId);
   const payment = await PaymentModel.findOne({ bookingId: booking._id });
+  const slot = booking.slotId ? await SlotModel.findById(booking.slotId) : null;
 
   return {
     status: booking.status,
@@ -84,5 +93,22 @@ async function shape(booking: InstanceType<typeof BookingModel>) {
     patientPhone: patient?.phone ?? null,
     amountPaise: payment?.amountPaise ?? null,
     paymentReference: payment?.razorpayPaymentId ?? null,
+
+    /**
+     * Whether the patient actually started paying.
+     *
+     * Without this the page cannot tell "dismissed the payment sheet" from
+     * "bank is still processing" — and it was showing the second message for
+     * both, telling patients their money was safe when they had never paid.
+     */
+    paymentAttempted:
+      booking.status === "PAYMENT_IN_FLIGHT" || Boolean(payment?.razorpayPaymentId),
+
+    /** Null once the hold has lapsed or been converted. */
+    holdExpiresAt:
+      slot?.status === "HELD" ? (slot.lockExpiresAt?.toISOString() ?? null) : null,
+
+    orderId: payment?.razorpayOrderId ?? null,
+    razorpayKeyId: process.env.RAZORPAY_KEY_ID ?? null,
   };
 }

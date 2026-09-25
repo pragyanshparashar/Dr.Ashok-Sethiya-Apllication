@@ -6,6 +6,7 @@ import { connectToDatabase } from "@/lib/db/connect";
 import { BookingModel } from "@/models/booking";
 import { PatientModel } from "@/models/patient";
 import { PaymentModel } from "@/models/payment";
+import { SlotModel } from "@/models/slot";
 import type { SessionName } from "@/lib/constants";
 
 export const dynamic = "force-dynamic";
@@ -24,6 +25,7 @@ export default async function StatusPage({
 
   const patient = await PatientModel.findById(booking.patientId);
   const payment = await PaymentModel.findOne({ bookingId: booking._id });
+  const slot = booking.slotId ? await SlotModel.findById(booking.slotId) : null;
 
   return (
     <>
@@ -41,6 +43,15 @@ export default async function StatusPage({
             patientPhone: patient?.phone ?? null,
             amountPaise: payment?.amountPaise ?? null,
             paymentReference: payment?.razorpayPaymentId ?? null,
+            paymentAttempted:
+              booking.status === "PAYMENT_IN_FLIGHT" ||
+              Boolean(payment?.razorpayPaymentId),
+            holdExpiresAt:
+              slot?.status === "HELD"
+                ? (slot.lockExpiresAt?.toISOString() ?? null)
+                : null,
+            orderId: payment?.razorpayOrderId ?? null,
+            razorpayKeyId: process.env.RAZORPAY_KEY_ID ?? null,
           }}
         />
       </main>
