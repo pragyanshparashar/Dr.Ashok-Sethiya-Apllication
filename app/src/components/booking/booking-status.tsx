@@ -28,6 +28,15 @@ type Status = {
 /** After this long, stop implying the patient should keep waiting. */
 const PATIENCE_SECONDS = 20;
 
+/**
+ * When to start warning that the hold is running out.
+ *
+ * Two minutes is enough to actually finish paying, and these patients are
+ * largely 55-75 - a countdown they have not noticed expiring is a worse
+ * experience than a clear, calm nudge while they can still act on it.
+ */
+const URGENT_SECONDS = 120;
+
 declare global {
   interface Window {
     Razorpay?: new (options: Record<string, unknown>) => { open: () => void };
@@ -87,6 +96,7 @@ export function BookingStatus({ bookingId, initial }: { bookingId: string; initi
 function AwaitingPayment({ data, bookingId }: { data: Status; bookingId: string }) {
   const [remaining, setRemaining] = useState(() => secondsUntil(data.holdExpiresAt));
   const [opening, setOpening] = useState(false);
+  const urgent = remaining <= URGENT_SECONDS;
 
   useEffect(() => {
     const t = setInterval(() => {
@@ -120,7 +130,9 @@ function AwaitingPayment({ data, bookingId }: { data: Status; bookingId: string 
     <>
       <Script src="https://checkout.razorpay.com/v1/checkout.js" strategy="afterInteractive" />
       <Card className="flex flex-col items-center gap-4 py-8 text-center">
-        <h1 className="text-headline-sm font-bold">Your slot is still held</h1>
+        <h1 className="text-headline-sm font-bold">
+          {urgent ? "Your slot is about to be released" : "Your slot is still held"}
+        </h1>
         <p className="text-body-md text-on-surface-variant">
           You haven&rsquo;t paid yet. We&rsquo;re keeping this appointment for you
           {data.slotTime && (
@@ -134,9 +146,23 @@ function AwaitingPayment({ data, bookingId }: { data: Status; bookingId: string 
           .
         </p>
 
-        <p className="tabular rounded-card bg-tertiary-fixed px-4 py-2 text-title-lg font-bold text-on-tertiary-fixed">
+        <p
+          role={urgent ? "alert" : undefined}
+          aria-live={urgent ? "assertive" : "off"}
+          className={`tabular rounded-card px-4 py-2 text-title-lg font-bold ${
+            urgent
+              ? "bg-error-container text-on-error-container"
+              : "bg-tertiary-fixed text-on-tertiary-fixed"
+          }`}
+        >
           {formatCountdown(remaining)} remaining
         </p>
+
+        {urgent && (
+          <p className="text-body-md font-semibold text-on-surface">
+            Please pay now to keep this appointment.
+          </p>
+        )}
 
         <Button size="lg" onClick={pay} disabled={opening} className="w-full">
           {opening ? "Opening payment…" : `Pay ₹${(data.amountPaise ?? 0) / 100} now`}
