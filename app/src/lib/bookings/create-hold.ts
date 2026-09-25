@@ -1,7 +1,8 @@
 import mongoose from "mongoose";
 import { BookingModel } from "@/models/booking";
 import { PatientModel } from "@/models/patient";
-import { claimSlot } from "@/lib/slots/claim";
+import { PaymentModel } from "@/models/payment";
+import { claimSlot, releaseSlot } from "@/lib/slots/claim";
 import { CONSULTATION_FEE_PAISE, type SessionName, type VisitCategory } from "@/lib/constants";
 
 export type CreateHoldInput = {
@@ -42,6 +43,15 @@ export type CreateHoldResult =
 export async function createBookingHold(
   input: CreateHoldInput,
 ): Promise<CreateHoldResult> {
+  // A patient can only attend one appointment at a time, so taking a new hold
+  // means they have moved on from any previous one. Without this, someone
+  // browsing through five slots holds all five for ten minutes each and blocks
+  // a third of a session for other patients.
+  //
+  // Only genuinely abandoned holds are released: anything where money may be
+  // moving, or which is already confirmed, is left strictly alone.
+  await releaseAbandonedHolds(input.patientPhone);
+
   const patient = await PatientModel.findOneAndUpdate(
     { phone: input.patientPhone },
     {
@@ -82,4 +92,35 @@ export async function createBookingHold(
     lockExpiresAt: claim.lockExpiresAt,
     amountPaise: CONSULTATION_FEE_PAISE,
   };
+}
+
+/**
+ * Release any unpaid, untouched hold this patient is still sitting on.
+ *
+ * Deliberately narrow. A booking is only reclaimed when it is PENDING_PAYMENT
+ * *and* no payment was ever attempted — a patient whose bank is mid-transaction
+ * (PAYMENT_IN_FLIGHT) keeps their slot, and a confirmed booking is never
+ * touched, so a family sharing one phone number can still hold two real
+ * appointments.
+ */
+async function releaseAbandonedHolds(phone: string): Promise<void> {
+  const patient = await PatientModel.findOne({ phone });
+  if (!patient) return;
+
+  const abandoned = await BookingModel.find({
+    patientId: patient._id,
+    status: "PENDING_PAYMENT",
+  });
+
+  for (const booking of abandoned) {
+    const payment = await PaymentModel.findOne({ bookingId: booking._id });
+
+    // If a payment id exists, the patient reached the gateway and money may
+    // be in flight. Leave it for the webhook and the sweep to resolve.
+    if (payment?.razorpayPaymentId) continue;
+
+    if (booking.slotId) await releaseSlot(booking.slotId);
+    booking.status = "EXPIRED";
+    await booking.save();
+  }
 }
