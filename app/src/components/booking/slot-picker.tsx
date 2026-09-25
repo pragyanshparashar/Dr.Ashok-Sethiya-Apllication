@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { Button } from "@/components/ui/button";
+import { Button, ButtonLink } from "@/components/ui/button";
 import { formatTime12h, formatSessionHours } from "@/lib/time";
 import { SESSIONS, type SessionName } from "@/lib/constants";
 
@@ -170,11 +170,19 @@ export function SlotPicker({
         )}
       </fieldset>
 
-      <Button size="lg" disabled={!slot} className="w-full">
-        {slot
-          ? `Continue · ${SESSIONS[session].label} · ${formatTime12h(slot)}`
-          : "Select a time to continue"}
-      </Button>
+      {slot ? (
+        <ButtonLink
+          size="lg"
+          className="w-full"
+          href={`/book?date=${date}&session=${session}&time=${encodeURIComponent(slot)}`}
+        >
+          Continue · {SESSIONS[session].label} · {formatTime12h(slot)}
+        </ButtonLink>
+      ) : (
+        <Button size="lg" disabled className="w-full">
+          Select a time to continue
+        </Button>
+      )}
     </div>
   );
 }
