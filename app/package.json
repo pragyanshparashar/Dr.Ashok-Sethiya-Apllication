@@ -9,7 +9,8 @@
     "lint": "eslint",
     "db:check": "node scripts/check-db.mjs",
     "verify:slots": "node scripts/verify-slots.mjs",
-    "seed:slots": "node scripts/seed-slots.mjs"
+    "seed:slots": "node scripts/seed-slots.mjs",
+    "check:razorpay": "node scripts/check-razorpay.mjs"
   },
   "dependencies": {
     "dayjs": "^1.11.23",
